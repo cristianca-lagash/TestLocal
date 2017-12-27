@@ -1,0 +1,200 @@
+Redis Key-Value Store, es un repositorio de diccionarios
+
+commandos: https://redis.io/commands
+
+- Instalar Redis desde Chocolatey choco redis-64
+- redis-cli para activar el cliente
+- redis-server para activar el servidor
+- Se puede utilizar redis cache Azure
+#Comandos
+
+- set Millave "Hola Mi Primer Redis"
+- Get Millave obtener llave
+- del Millave eliminar llave
+- -h es la ayuda
+- keys * = muestra todas las llaves almacenadas
+- incr = es un incrementador 
+- decr = es un decrementador
+- Ex: set a 10 o set b 100 o set c 1000
+- mset = multiple set, se utilizaria mset a "Hola" b "Mundo" c "!"
+- mget = lectura multiple
+- exists = se utiliza para validar si la llave existe
+- expire myLlave  10 = implementa la expiración de una llave, en este caso es 10
+- EJ: set miLlaveExpirada 2000 ex 30
+- ttl miLlaveExp parametro para validar cuanto tiempo queda para la expiración
+ 
+#ListasRedis son listas enlazadas y/o gestor de estructuras de datos
+
+- rpush miList A = crearLista
+- lrange miList 0 1 = consultar lista
+- lrange miList 0 -1 = consulta todos los elementos de la lista
+- lpush miList Z Y X
+- rpop miList elimina el primero en ingresar
+- lpop miList eliminar el último en ingresar
+- stack primeros en entrar últimos en salir
+- lpop miList eliminar el elemento más viejo
+- puedo agregar a la izquierda y elimino a la derecha
+- ltrim 11 -1 = elimina desde el número 11 al último
+- llen miList = consulta el tamaño de la lista ej 10
+- ltrim 5 (posición 5) 10 (de 10 posiciones) elimina 5 de 10 elementos
+
+#Bloqueo 
+
+- brpop miList 5 = brpop bloqueo de lista durante 5 segundos
+- blpop miList 5 =
+- al ejecutar por segunda vez el comando nos avisa si alguien ingreso algo en la list, para esta ejecución la lista queda bloqueda
+
+#HASH
+
+- hmset usuario: 1 nombre "Cristian" apellido "Cárdenas"
+- hget usuario:1 nombre o apellido
+- hmget usuario:1 nombre apellido = h multiples get, trae el contenido de hash
+- hgetall usuario:1 trae todo el contenido del hash incluida las variables
+- palabra reservada no-such-field es un campo que no existe, pero lo agrega a la consulta
+- hmset usuario:1 nombre "Cristian" apellido "Cardenas" edad "35" = actualiza la información del usuario:1 con la palabra reservada anterior
+- hgetall usuario:1 = trae toda la información del usuario 1 avtualizada
+- hincrby usuario2: edad 10
+- hget usuario:2 edad consulta el campo especifico del usuario 2
+
+
+
+
+Carlos, buenas tardes
+
+De acuerdo a la reunión que sostuvimos durante la semana te comento los compromisos adquiridos:
+
+- Contrato de Servicios
+
+- El sitio de Alamo agregará y consultará todo tipo de datos directamente al sistema de reserva que tienes ustedes, por lo tanto el sitio actual no guardará ninguna información
+
+- Fecha de cuando estaran disponibles los WS, estos deben ser los siguientes:  
+                      1- Creación, Edición y Eliminación de una reserva, recordar que debe soportar guardar el código de transacción de transbank
+                      2- Listado de vehiculos por categoria con precio y caracteristicas de la categoria
+                      3- Listado de opcionales
+                      4- Listado de sucursales y sus respectivos opcionales
+                      5- El listado de vehiculos debe tener marcada la opción si la categoria tiene oferta + su precio en moneda chilena y dolar (USD)
+ 
+
+Por otro lado el tiempo de desarrollo yo lo estimo en 2 meses y 10 días, pero el no tener los servicios web las fechas se irán aplazando, desde el cumplimiento del primer mes cuando es la fecha de realizar la integración
+
+Quedo atento a tus comentarios
+
+
+
+http://app.alamochile.com:8090/apex/alamo/reservas/sucursales/
+ 
+Descripción de algunos datos:
+ 
+tag: indica si tiene cobro de tag, 0 no, 1 si.
+concesion_aero: indica porcentaje de cobro al valor de arriendo, cuando hay cobro será mayor que cero.
+
+ 
+flujo de pantalla..., 
+paginación, la api ya soporta la paginación
+
+http://ecopass.cl/events/introduccion-a-asp-net-mvc-5-con-entity-framework
+
+
+Taller Practico MVC.NET Avanzado
+
+Requisitos:
+
+Tener nociones basicas de MVC.NET y C#
+
+Contenidos:
+
+ccardensa@outlook.com
+
+
+Para defectos 1 mobile y 1 dto = desarrollador front y back
+Para
+
+Cuando se liberan 
+
+Hérnan Resolución de Defectos - 1 sprint 
+Oscar/ Carlos Campos - DOM
+Luis Ramirez/ Alejandro - Registros Técnicos
+
+Despues de la deily meeting, me junto con Gustavo para definir tema la sesión
+
+- Organizarme con IVAN - validar de documentación
+- Averiguar sobre las capacitaciones de traspaso
+
+Documentar como crear una api o web y subirla a kubernitis
+Como crear una app web y meterla dentro del pipeline
+Como funciona log de PSSIM
+Horas Ventanilla DOM y Registros Técnicos
+
+Equipo DOM
+
+Carlos Campos ->  Lunes 26
+Hernan ->         Lunes 26 -> 
+Técnologia -> ?
+
+RT
+
+Luis Ramirez -> Lunes 26 -> mediados de enero a worket
+Alejandro    -> Lunes 26 -> 
+Técnologia   -> React y Node.js 
+
+Luis, Hernan, Alejandro
+
+Enviar horas quemadas
+ 
+- Estabilización 
+- Integración Rukan
+- Defectos
+
+  Hernan es solo mobile
+
+- No funciona la funcionalidad buscar #172
+
+
+- Revisar la parametria de Rukan
+- Formulario web hacer mach con los campos de rukan lo que se debe insertar vs los input
+- Acceso a Rukan
+- Acceso Argis (Validar si tenemos acceso)
+- Revisar pípeline para publicar en desarrollo, en vez de la IP se agregea la url
+
+
+- Pipeline de integración con Rukan
+- Analisis de Rukan  
+- PSSIM -> Registrar los sitemas de catastro web y mobile en producción
+- Pedro esta en Alemana, conversar con Gustavo
+- Luis
+
+- Infra estructura desarrollo ya esta en los e ambientes y el pipeline se actualizo
+- Lo que falta crear los sistemas en PSSIM Producción
+- Tarea interna publicar APP de Argis 
+- 
+
+
+
+Minuta - Reunión Seguimiento Minvu
+
+- Configurar pipeline para Login
+- Defecto sobre el rut
+- Gestionar capacitación
+- Ver con IVAN pasos para publicar la aplicación
+- Gestionar capacitación con Ingenieria/Operaciones, esta capacitación debe tener un contexto Global de DTX
+- Enviar URL de Catastro WEB y revisar día viernes la WEB de Catastro
+
+
+Programación Pruebas Catastro Mobile
+
+-> Segunda semana de Enero (validar fechas)
+-> Humberto -> bkcup Mauricio 
+-> Instalación Gitlab debe ser instalado ¿Cuando?
+-> Capacitación de Arquitectura
+-> ver con IVAN que puntos faltan para cerrar la aplicación en la tienda como producto final
+
+
+
+RT  -> Inicio 26/12
+DOM -> Inicio 26/12
+
+
+
+
+- 
+- 
